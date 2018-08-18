@@ -11,9 +11,13 @@ function Game({ msg, ended, currentPosition, time, restart, wrong }) {
       <p>{msg}</p>
       {ended ? (
         <React.Fragment>
-          <p>
-            it took you <TimeCounter value={time} /> seconds!
-          </p>
+          <h3>
+            it took you{' '}
+            <strong>
+              <TimeCounter value={time} />
+            </strong>{' '}
+            seconds!
+          </h3>
           <p>not bad... wanna try again?</p>
         </React.Fragment>
       ) : (

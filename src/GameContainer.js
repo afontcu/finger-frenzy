@@ -28,16 +28,19 @@ class GameContainer extends React.Component {
 
     if (keyCode === space) {
       this.handleRestart()
-    } else if (keyCode === requiredNextKey && keyCode !== lastLetter) {
+    } else if (keyCode === requiredNextKey) {
       if (keyCode === firstLetter) {
         this.handleFirstLetter()
       }
 
-      this.setState(prevState => ({
-        currentPosition: prevState.currentPosition + 1,
-      }))
-    } else if (keyCode === lastLetter) {
-      this.handleLastLetter()
+      if (keyCode === lastLetter) {
+        this.handleLastLetter()
+      }
+
+      keyCode !== lastLetter &&
+        this.setState(prevState => ({
+          currentPosition: prevState.currentPosition + 1,
+        }))
     } else if (keyCode > firstLetter && keyCode < lastLetter) {
       this.setState({ wrong: true })
       setTimeout(() => {
