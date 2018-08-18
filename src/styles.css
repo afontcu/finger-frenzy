@@ -28,6 +28,16 @@ body {
   justify-content: center;
 }
 
+.Footer {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: var(--spacing);
+}
+
+.Footer a {
+  color: #fdcd3b;
+}
+
 .Game {
   min-width: 700px;
   padding: var(--spacing-large);
