@@ -1,10 +1,11 @@
 import React from 'react'
+import { ShakeHorizontal } from 'reshake'
 
 import Button from './Button'
 import TimeCounter from './TimeCounter'
 import { arrAlphabet } from './utils/alphabet'
 
-function Game({ msg, ended, currentPosition, time, restart }) {
+function Game({ msg, ended, currentPosition, time, restart, wrong }) {
   return (
     <div className="Game">
       <p>{msg}</p>
@@ -17,7 +18,9 @@ function Game({ msg, ended, currentPosition, time, restart }) {
         </React.Fragment>
       ) : (
         <React.Fragment>
-          <p className="Letter">{arrAlphabet[currentPosition]}</p>
+          <ShakeHorizontal trigger={wrong ? null : 'active'} q={1}>
+            <p className="Letter">{arrAlphabet[currentPosition]}</p>
+          </ShakeHorizontal>
           <h2>
             Time: <TimeCounter value={time} />s
           </h2>

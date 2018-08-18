@@ -16,6 +16,7 @@ class GameContainer extends React.Component {
     ended: false,
     currentPosition: 0,
     msg: 'Ready? Start by pressing "A"!',
+    wrong: false,
   }
 
   state = this.initialState
@@ -27,20 +28,21 @@ class GameContainer extends React.Component {
 
     if (keyCode === space) {
       this.handleRestart()
-    }
+    } else if (keyCode === requiredNextKey && keyCode !== lastLetter) {
+      if (keyCode === firstLetter) {
+        this.handleFirstLetter()
+      }
 
-    if (keyCode === firstLetter) {
-      this.handleFirstLetter()
-    }
-
-    if (keyCode === lastLetter) {
-      this.handleLastLetter()
-    }
-
-    if (keyCode === requiredNextKey && keyCode !== lastLetter) {
       this.setState(prevState => ({
         currentPosition: prevState.currentPosition + 1,
       }))
+    } else if (keyCode === lastLetter) {
+      this.handleLastLetter()
+    } else if (keyCode > firstLetter && keyCode < lastLetter) {
+      this.setState({ wrong: true })
+      setTimeout(() => {
+        this.setState({ wrong: false })
+      }, 300)
     }
   }
 

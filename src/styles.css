@@ -29,7 +29,7 @@ body {
 }
 
 .Game {
-  min-width: 70vw;
+  min-width: 700px;
   padding: var(--spacing-large);
   margin-bottom: var(--spacing-huge);
 
