@@ -89,7 +89,7 @@ class Game extends React.Component {
           </React.Fragment>
         ) : (
           <React.Fragment>
-            <p class="Letter">{arrAlphabet[this.state.currentPosition]}</p>
+            <p className="Letter">{arrAlphabet[this.state.currentPosition]}</p>
             <h2>
               Time: <TimeCounter value={this.state.time} />s
             </h2>
