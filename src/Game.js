@@ -4,26 +4,26 @@ import Button from './Button'
 import TimeCounter from './TimeCounter'
 import { arrAlphabet } from './utils/alphabet'
 
-function Game(props) {
+function Game({ msg, ended, currentPosition, time, restart }) {
   return (
     <div className="Game">
-      <p>{props.msg}</p>
-      {props.ended ? (
+      <p>{msg}</p>
+      {ended ? (
         <React.Fragment>
           <p>
-            it took you <TimeCounter value={props.time} /> seconds!
+            it took you <TimeCounter value={time} /> seconds!
           </p>
           <p>not bad... wanna try again?</p>
         </React.Fragment>
       ) : (
         <React.Fragment>
-          <p className="Letter">{arrAlphabet[props.currentPosition]}</p>
+          <p className="Letter">{arrAlphabet[currentPosition]}</p>
           <h2>
-            Time: <TimeCounter value={props.time} />s
+            Time: <TimeCounter value={time} />s
           </h2>
         </React.Fragment>
       )}
-      <Button onClick={props.restart}>Play again</Button>
+      <Button onClick={restart}>Play again</Button>
       <p style={{ margin: 0, fontStyle: 'italic' }}>
         (You can also press space)
       </p>
