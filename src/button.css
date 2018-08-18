@@ -1,4 +1,5 @@
 .Button {
+  outline: 0; /* :( */
   position: relative;
   display: inline-block;
   padding: var(--spacing) var(--spacing-huge);
