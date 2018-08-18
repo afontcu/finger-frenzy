@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Game from './Game'
+import GameContainer from './GameContainer'
 import Background from './Background'
 import Header from './Header'
 
@@ -11,7 +11,7 @@ class App extends React.Component {
     return (
       <Background>
         <Header />
-        <Game />
+        <GameContainer />
       </Background>
     )
   }

@@ -39,24 +39,19 @@ body {
 }
 
 .Header {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  grid-template-rows: auto auto;
+  display: flex;
   align-items: flex-end;
+
   color: #fff;
   text-align: center;
 }
 
 .Header__title {
-  font-family: 'Permanent Marker', cursive;
+  margin: 0;
+
   font-size: calc(3em + 2vw);
   text-shadow: 0 0 14px rgba(0, 0, 0, 0.8);
-  margin: 0;
-}
-
-.Header__tagline {
-  font-size: 1.2em;
-  text-shadow: 0 0 14px rgba(0, 0, 0, 0.8);
+  font-family: 'Permanent Marker', cursive;
 }
 
 .Finger {
