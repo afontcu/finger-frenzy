@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+:root {
+  --spacing: 12px;
+  --spacing-large: calc(var(--spacing) * 2);
+  --spacing-huge: calc(var(--spacing) * 4);
+}
+
 html,
 body {
   margin: 0;
@@ -23,19 +29,64 @@ body {
 }
 
 .Game {
+  min-width: 70vw;
+  padding: var(--spacing-large);
+  margin-bottom: var(--spacing-huge);
+
   text-align: center;
   background-color: white;
-  border-radius: 12px;
-  padding: 24px;
-  min-width: 70vw;
-  margin-bottom: 48px;
+  border-radius: var(--spacing);
 }
 
-.Title {
-  font-family: 'Permanent Marker', cursive;
+.Header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: auto auto;
+  align-items: flex-end;
   color: #fff;
   text-align: center;
-  font-size: calc(3em + 1vw);
-  text-shadow: 0 0 10px #1f8a70;
+}
+
+.Header__title {
+  font-family: 'Permanent Marker', cursive;
+  font-size: calc(3em + 2vw);
+  text-shadow: 0 0 14px rgba(0, 0, 0, 0.8);
   margin: 0;
+}
+
+.Header__tagline {
+  font-size: 1.2em;
+  text-shadow: 0 0 14px rgba(0, 0, 0, 0.8);
+}
+
+.Finger {
+  font-size: 4em;
+  animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.Letter {
+  width: 15vw;
+  min-width: 100px;
+  max-width: 200px;
+  margin: 0 auto;
+
+  font-size: 5rem;
+  border-radius: 9px;
+  text-align: center;
+  background: linear-gradient(
+    110deg,
+    #ffed4b 15%,
+    #fdcd3b 15%,
+    #fdcd3b 85%,
+    #ffed4b 85%
+  );
 }

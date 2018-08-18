@@ -1,0 +1,43 @@
+.Button {
+  position: relative;
+  display: inline-block;
+  padding: var(--spacing) var(--spacing-huge);
+  margin: var(--spacing-large) 0 0;
+
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  font-size: 1.3rem;
+  font-family: 'Comic Sans MS';
+  text-transform: uppercase;
+  color: #f1f1f2;
+  background: linear-gradient(-40deg, #eb830b, #eb250b);
+  transition: all 0.3s ease;
+}
+
+.Button:hover {
+  animation: wobble 0.2s linear infinite;
+  color: #333;
+  border: 2px solid #333;
+}
+
+@keyframes wobble {
+  0% {
+    transform: translateX(0);
+    transform: translateY(0);
+  }
+
+  25% {
+    transform: translateX(-5px);
+    transform: translateY(-2px);
+  }
+
+  75% {
+    transform: translateX(5px);
+  }
+
+  100% {
+    transform: translateX(0);
+    transform: translateY(0);
+  }
+}

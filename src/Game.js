@@ -1,4 +1,6 @@
 import React from 'react'
+import Button from './Button'
+import TimeCounter from './TimeCounter'
 
 const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 const arrAlphabet = alphabet.split('')
@@ -7,13 +9,14 @@ const getKeyCode = char => char.toUpperCase().charCodeAt(0)
 
 const firstLetter = getKeyCode('A')
 const lastLetter = getKeyCode('Z')
+const space = getKeyCode(' ')
 
 class Game extends React.Component {
   initialState = {
     time: 0,
     ended: false,
     currentPosition: 0,
-    msg: 'How fast can you type the alphabet?',
+    msg: 'Ready? Start by pressing "A"!',
   }
 
   tick = () => {
@@ -29,6 +32,10 @@ class Game extends React.Component {
       arrAlphabet[this.state.currentPosition]
     )
 
+    if (keyCode === space) {
+      this.handleRestart()
+    }
+
     if (keyCode === requiredNextKey) {
       this.setState(prevState => ({
         currentPosition: prevState.currentPosition + 1,
@@ -36,7 +43,14 @@ class Game extends React.Component {
       }))
 
       if (keyCode === firstLetter) {
-        this.interval = setInterval(() => this.tick(), 10)
+        var startTime = Date.now()
+
+        this.interval = setInterval(function() {
+          var elapsedTime = Date.now() - startTime
+          this.setState({
+            time: elapsedTime,
+          })
+        }, 100)
       }
 
       if (keyCode === lastLetter) {
@@ -64,20 +78,27 @@ class Game extends React.Component {
   render() {
     return (
       <div className="Game">
-        <h2>{this.state.msg}</h2>
+        <p>{this.state.msg}</p>
         {this.state.ended ? (
           <React.Fragment>
-            <p>finished!</p>
-            <p>it took you {this.state.time / 100} seconds!</p>
+            <p>
+              it took you
+              <TimeCounter value={this.state.time} />seconds!
+            </p>
             <p>not bad... wanna try again?</p>
           </React.Fragment>
         ) : (
           <React.Fragment>
-            <p>next key: {arrAlphabet[this.state.currentPosition]}</p>
-            <h2>Time: {this.state.time / 100}s</h2>
+            <p class="Letter">{arrAlphabet[this.state.currentPosition]}</p>
+            <h2>
+              Time: <TimeCounter value={this.state.time} />s
+            </h2>
           </React.Fragment>
         )}
-        <button onClick={this.handleRestart}>Play again</button>
+        <Button onClick={this.handleRestart}>Play again</Button>
+        <p style={{ margin: 0, fontStyle: 'italic' }}>
+          (You can also press space)
+        </p>
       </div>
     )
   }
