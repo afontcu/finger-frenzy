@@ -79,7 +79,7 @@ body {
 }
 
 .Letter {
-  width: min-content;
+  width: max-content;
   margin: 0 auto;
   padding: 0 var(--spacing-large);
   

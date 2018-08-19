@@ -3,7 +3,8 @@ import { ShakeHorizontal } from 'reshake'
 
 import Button from './Button'
 import Letter from './Letter'
-import TimeCounter from './TimeCounter'
+import ShareTime from './ShareTime'
+import TimeFormatter from './TimeFormatter'
 import { arrAlphabet } from './utils/alphabet'
 
 function Game({
@@ -26,14 +27,21 @@ function Game({
       {ended ? (
         <React.Fragment>
           <h3>
-            it took you{' '}
-            <TimeCounter
+            It took you{' '}
+            <TimeFormatter
               value={time}
-              render={time => <Letter color={letterHue} value={time} />}
+              render={time => (
+                <Letter color={letterHue} value={`🎉 ${time} 🎉`} />
+              )}
             />{' '}
             seconds!
           </h3>
-          <p>not bad... wanna try again?</p>
+          <p>
+            <TimeFormatter
+              value={time}
+              render={time => <ShareTime time={time} />}
+            />
+          </p>
         </React.Fragment>
       ) : (
         <React.Fragment>
@@ -45,7 +53,7 @@ function Game({
           </ShakeHorizontal>
           <h2>
             Time:{' '}
-            <TimeCounter
+            <TimeFormatter
               value={time}
               render={time => <span>{time}</span>}
             />
