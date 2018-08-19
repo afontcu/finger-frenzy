@@ -31,3 +31,12 @@ _"We used to make websites because it was fun and at a point we lost the way. We
 
 Lol then I love you. Feel free to submit issues or PRs. I'll happily discuss
 any idea, improvement or tweak.
+
+## Roadmap
+
+Well, "roadmap"....
+
+- [ ] Add a leaderboard! (mostly because I wanna play with GraphQL)
+- [ ] Make it PWA so you can play it offline
+- [ ] Make it work in mobile
+- [ ] Hard mode (reverse alphabet? skipping certain letters?)
