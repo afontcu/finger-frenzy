@@ -1,7 +1,6 @@
-import React from 'react'
-
-function TimeCounter({ value }) {
-  return <span>{new Date(value).toISOString().slice(17, -1)}</span>
+function TimeCounter({ value, render }) {
+  const formattedTime = new Date(value).toISOString().slice(17, -1)
+  return render(formattedTime)
 }
 
 export default TimeCounter

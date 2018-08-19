@@ -79,19 +79,11 @@ body {
 }
 
 .Letter {
-  width: 15vw;
-  min-width: 100px;
-  max-width: 200px;
+  width: min-content;
   margin: 0 auto;
-
+  padding: 0 var(--spacing-large);
+  
   font-size: 5rem;
   border-radius: 9px;
   text-align: center;
-  background: linear-gradient(
-    110deg,
-    #ffed4b 15%,
-    #fdcd3b 15%,
-    #fdcd3b 85%,
-    #ffed4b 85%
-  );
 }

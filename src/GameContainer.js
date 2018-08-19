@@ -10,13 +10,16 @@ import {
   space,
 } from './utils/alphabet'
 
+const huesList = [12, 138, 200, 54]
+
 class GameContainer extends React.Component {
   initialState = {
     time: 0,
-    ended: true,
+    ended: false,
     currentPosition: 0,
     msg: 'How fast can you type the alphabet? Start by pressing "A"!',
     wrong: false,
+    letterHue: huesList[huesList.length - 1],
   }
 
   state = this.initialState
@@ -36,9 +39,7 @@ class GameContainer extends React.Component {
       if (keyCode === lastLetter) {
         this.handleLastLetter()
       } else {
-        this.setState(prevState => ({
-          currentPosition: prevState.currentPosition + 1,
-        }))
+        this.handleNextLetter()
       }
     } else if (keyCode > firstLetter && keyCode < lastLetter) {
       this.setState({ wrong: true })
@@ -63,8 +64,15 @@ class GameContainer extends React.Component {
     clearInterval(this.interval)
     this.setState({
       ended: true,
-      msg: 'yay! you finished!',
+      msg: 'Well done!',
     })
+  }
+
+  handleNextLetter = () => {
+    this.setState(prevState => ({
+      currentPosition: prevState.currentPosition + 1,
+      letterHue: huesList[prevState.currentPosition % huesList.length],
+    }))
   }
 
   handleRestart = () => {
@@ -72,7 +80,7 @@ class GameContainer extends React.Component {
     this.setState(this.initialState)
   }
 
-  componentWillMount() {
+  componentDidMount() {
     document.addEventListener('keydown', this.handleKeyDown, false)
   }
 

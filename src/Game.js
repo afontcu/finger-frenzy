@@ -2,10 +2,24 @@ import React from 'react'
 import { ShakeHorizontal } from 'reshake'
 
 import Button from './Button'
+import Letter from './Letter'
 import TimeCounter from './TimeCounter'
 import { arrAlphabet } from './utils/alphabet'
 
-function Game({ msg, ended, currentPosition, time, restart, wrong }) {
+function Game({
+  msg,
+  ended,
+  currentPosition,
+  time,
+  restart,
+  wrong,
+  letterHue,
+}) {
+  // kinda hacky, but I haven't found a better way to enable/disable shaking
+  // using a prop. `null` value makes it shake, while "active" will only trigger
+  // animation on :active state - which happens...never. So yeah, hacky.
+  const shakeTrigger = wrong ? null : 'active'
+
   return (
     <div className="Game">
       <p>{msg}</p>
@@ -13,20 +27,29 @@ function Game({ msg, ended, currentPosition, time, restart, wrong }) {
         <React.Fragment>
           <h3>
             it took you{' '}
-            <strong>
-              <TimeCounter value={time} />
-            </strong>{' '}
+            <TimeCounter
+              value={time}
+              render={time => <Letter color={letterHue} value={time} />}
+            />{' '}
             seconds!
           </h3>
           <p>not bad... wanna try again?</p>
         </React.Fragment>
       ) : (
         <React.Fragment>
-          <ShakeHorizontal trigger={wrong ? null : 'active'} q={1}>
-            <p className="Letter">{arrAlphabet[currentPosition]}</p>
+          <ShakeHorizontal trigger={shakeTrigger} q={1}>
+            <Letter
+              color={letterHue}
+              value={arrAlphabet[currentPosition]}
+            />
           </ShakeHorizontal>
           <h2>
-            Time: <TimeCounter value={time} />s
+            Time:{' '}
+            <TimeCounter
+              value={time}
+              render={time => <span>{time}</span>}
+            />
+            s
           </h2>
         </React.Fragment>
       )}
