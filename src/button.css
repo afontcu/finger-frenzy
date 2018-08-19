@@ -11,7 +11,7 @@
   font-size: 1.3rem;
   font-family: 'Comic Sans MS';
   text-transform: uppercase;
-  color: #f1f1f2;
+  color: #fff;
   background: linear-gradient(-40deg, #eb830b, #eb250b);
   transition: all 0.3s ease;
 }
