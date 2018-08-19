@@ -23,9 +23,9 @@ function Game({
 
   return (
     <div className="Game">
-      <p>{msg}</p>
+      <p className="Game__msg">{msg}</p>
       {ended ? (
-        <React.Fragment>
+        <h3>
           It took you{' '}
           <TimeFormatter
             value={time}
@@ -40,7 +40,7 @@ function Game({
               render={time => <ShareTime time={time} />}
             />
           </p>
-        </React.Fragment>
+        </h3>
       ) : (
         <React.Fragment>
           <ShakeHorizontal trigger={shakeTrigger} q={1}>

@@ -19,7 +19,7 @@ class GameContainer extends React.Component {
     shakeIt: false,
     currentPosition: 0,
     letterHue: huesList[huesList.length - 1],
-    msg: 'How fast can you type the alphabet? Start by pressing "A"!',
+    msg: 'How fast can you type the alphabet?\nStart by pressing "A"!',
   }
 
   state = this.initialState
@@ -52,7 +52,7 @@ class GameContainer extends React.Component {
   handleFirstLetter = () => {
     const startTime = Date.now()
 
-    this.setState({ msg: 'go go go!' })
+    this.setState({ msg: 'Run Forrest, run!' })
 
     this.interval = setInterval(() => {
       const elapsedTime = Date.now() - startTime

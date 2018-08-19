@@ -44,8 +44,22 @@ body {
   margin-bottom: var(--spacing-huge);
 
   text-align: center;
-  background-color: white;
+  background-color: #fff;
+  background: repeating-linear-gradient(
+    45deg,
+    #fff,
+    #fff 80px,
+    #fafafa 80px,
+    #fafafa 160px
+  );
   border-radius: var(--spacing);
+}
+
+.Game__msg {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 1.6rem;
+  margin: 0 auto var(--spacing-large);
+  white-space: pre-wrap;
 }
 
 .Header {
