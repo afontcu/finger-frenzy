@@ -1,20 +1,31 @@
 {
   "name": "new",
+  "license": "MIT",
   "version": "1.0.0",
-  "description": "",
-  "keywords": [],
+  "description": "How fast can you type the alphabet?",
+  "keywords": ["finger-frenzy", "fingerfrenzy", "game", "react"],
+  "author": {
+    "name": "Adrià Fontcuberta",
+    "url": "https://twitter.com/afontcu_"
+  },
   "main": "src/index.js",
   "dependencies": {
     "react": "16.3.2",
     "react-dom": "16.3.2",
     "react-scripts": "1.1.4",
-    "reshake": "^1.1.3"
+    "reshake": "^1.1.3",
+    "serve": "^9.6.0"
   },
   "devDependencies": {},
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "now-start": "serve --single ./build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "now": {
+    "public": true,
+    "alias": "finger-frenzy"
   }
 }
