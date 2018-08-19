@@ -16,10 +16,10 @@ class GameContainer extends React.Component {
   initialState = {
     time: 0,
     ended: false,
+    shakeIt: false,
     currentPosition: 0,
-    msg: 'How fast can you type the alphabet? Start by pressing "A"!',
-    wrong: false,
     letterHue: huesList[huesList.length - 1],
+    msg: 'How fast can you type the alphabet? Start by pressing "A"!',
   }
 
   state = this.initialState
@@ -42,9 +42,9 @@ class GameContainer extends React.Component {
         this.handleNextLetter()
       }
     } else if (keyCode > firstLetter && keyCode < lastLetter) {
-      this.setState({ wrong: true })
+      this.setState({ shakeIt: true })
       setTimeout(() => {
-        this.setState({ wrong: false })
+        this.setState({ shakeIt: false })
       }, 300)
     }
   }

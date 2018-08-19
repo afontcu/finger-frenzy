@@ -13,29 +13,27 @@ function Game({
   currentPosition,
   time,
   restart,
-  wrong,
+  shakeIt,
   letterHue,
 }) {
   // kinda hacky, but I haven't found a better way to enable/disable shaking
   // using a prop. `null` value makes it shake, while "active" will only trigger
   // animation on :active state - which happens...never. So yeah, hacky.
-  const shakeTrigger = wrong ? null : 'active'
+  const shakeTrigger = shakeIt ? null : 'active'
 
   return (
     <div className="Game">
       <p>{msg}</p>
       {ended ? (
         <React.Fragment>
-          <h3>
-            It took you{' '}
-            <TimeFormatter
-              value={time}
-              render={time => (
-                <Letter color={letterHue} value={`🎉 ${time} 🎉`} />
-              )}
-            />{' '}
-            seconds!
-          </h3>
+          It took you{' '}
+          <TimeFormatter
+            value={time}
+            render={time => (
+              <Letter color={letterHue} value={`🎉 ${time} 🎉`} />
+            )}
+          />{' '}
+          seconds!
           <p>
             <TimeFormatter
               value={time}
