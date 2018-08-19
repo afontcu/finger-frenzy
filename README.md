@@ -3,13 +3,13 @@
 Finger Frenzy is a quite stupid game that I really loved when I was younger.
 I discovered it long time ago in some random page with hundreds of small games.
 
-You can play here: https://finger-frenzy.now.sh/
+You can play it here: https://finger-frenzy.now.sh/
 
 
 ## What is Finger Frenzy about
 
-Well, is quite easy to understand? Just try to type the alphabet
-(ABCDEFGHIJKLMNOPQRSTUVWXYZ) as fast as you can.
+Just try to type the alphabet (ABCDEFGHIJKLMNOPQRSTUVWXYZ) as fast as you can.
+That's it (for now).
 
 
 ## Why should I do that?
