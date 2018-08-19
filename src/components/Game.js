@@ -5,7 +5,7 @@ import Button from './Button'
 import Letter from './Letter'
 import ShareTime from './ShareTime'
 import TimeFormatter from './TimeFormatter'
-import { arrAlphabet } from './utils/alphabet'
+import { arrAlphabet } from '../utils/alphabet'
 
 function Game({
   msg,

@@ -1,10 +1,10 @@
 import React from 'react'
-import GameContainer from './GameContainer'
-import Background from './Background'
-import Header from './Header'
-import Footer from './Footer'
+import GameContainer from './components/GameContainer'
+import Background from './components/Background'
+import Header from './components/Header'
+import Footer from './components/Footer'
 
-import './styles.css'
+import './styles/styles.css'
 
 function App() {
   return (

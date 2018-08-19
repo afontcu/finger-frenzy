@@ -8,7 +8,7 @@ import {
   firstLetter,
   lastLetter,
   space,
-} from './utils/alphabet'
+} from '../utils/alphabet'
 
 const huesList = [12, 138, 200, 54]
 
