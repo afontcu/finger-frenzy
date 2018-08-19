@@ -13,9 +13,9 @@ import {
 class GameContainer extends React.Component {
   initialState = {
     time: 0,
-    ended: false,
+    ended: true,
     currentPosition: 0,
-    msg: 'Ready? Start by pressing "A"!',
+    msg: 'How fast can you type the alphabet? Start by pressing "A"!',
     wrong: false,
   }
 
@@ -35,12 +35,11 @@ class GameContainer extends React.Component {
 
       if (keyCode === lastLetter) {
         this.handleLastLetter()
-      }
-
-      keyCode !== lastLetter &&
+      } else {
         this.setState(prevState => ({
           currentPosition: prevState.currentPosition + 1,
         }))
+      }
     } else if (keyCode > firstLetter && keyCode < lastLetter) {
       this.setState({ wrong: true })
       setTimeout(() => {
