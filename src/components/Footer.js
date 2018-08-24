@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Footer() {
+function Footer () {
   return (
     <p className="Footer">
       Made by{' '}
@@ -9,7 +9,7 @@ function Footer() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        @afontcu
+        @afontcu_
       </a>{' '}
       with 🧡. Check out the{' '}
       <a
