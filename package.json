@@ -18,7 +18,7 @@
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "react-scripts": "^3.0.1",
-    "reshake": "^1.1.5",
+    "reshake": "^1.2.1",
     "serve": "^10.0.2"
   },
   "devDependencies": {},
