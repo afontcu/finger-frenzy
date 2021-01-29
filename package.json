@@ -19,7 +19,8 @@
     "react-dom": "^16.6.0",
     "react-scripts": "^3.0.1",
     "reshake": "^1.2.1",
-    "serve": "^10.0.2"
+    "serve": "^10.0.2",
+    "styled-components": "^5.2.1"
   },
   "devDependencies": {},
   "scripts": {
@@ -32,5 +33,17 @@
   "now": {
     "public": true,
     "alias": "finger-frenzy"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
