@@ -1,15 +1,15 @@
 import React from 'react'
 
-function Footer () {
+function Footer() {
   return (
     <p className="Footer">
       Made by{' '}
       <a
-        href="https://twitter.com/afontcu_"
+        href="https://twitter.com/afontq"
         target="_blank"
         rel="noopener noreferrer"
       >
-        @afontcu_
+        @afontq
       </a>{' '}
       with 🧡. Check out the{' '}
       <a
