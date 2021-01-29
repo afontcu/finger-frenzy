@@ -19,7 +19,7 @@
     "react-dom": "^16.6.0",
     "react-scripts": "^3.0.1",
     "reshake": "^1.2.1",
-    "serve": "^10.0.2",
+    "serve": "^10.1.2",
     "styled-components": "^5.2.1"
   },
   "devDependencies": {},
