@@ -3,7 +3,7 @@
 Finger Frenzy is a quite stupid game that I really loved when I was younger.
 I discovered it long time ago in some random page with hundreds of small games.
 
-You can play it here: https://finger-frenzy.now.sh/
+You can play it here: https://finger-frenzy.netlify.app/
 
 
 ## What is Finger Frenzy about

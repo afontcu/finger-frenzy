@@ -1,7 +1,7 @@
 import React from 'react'
 
 function ShareTime({ time }) {
-  const text = `I typed the whole alphabet in ${time} seconds! Can you beat me? https://finger-frenzy.now.sh 👈👈👈`
+  const text = `I typed the whole alphabet in ${time} seconds! Can you beat me? https://finger-frenzy.netlify.app/ 👈👈👈`
   const url = `https://twitter.com/intent/tweet?text=${text}`
 
   return (
