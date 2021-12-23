@@ -52,7 +52,7 @@ class GameContainer extends React.Component {
   handleFirstLetter = () => {
     const startTime = Date.now()
 
-    this.setState({ msg: 'Run Forrest, run!' })
+    this.setState({ msg: 'Run Forrest!\nRun!' })
 
     this.interval = setInterval(() => {
       const elapsedTime = Date.now() - startTime
@@ -69,7 +69,7 @@ class GameContainer extends React.Component {
   }
 
   handleNextLetter = () => {
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       currentPosition: prevState.currentPosition + 1,
       letterHue: huesList[prevState.currentPosition % huesList.length],
     }))
